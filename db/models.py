@@ -14,8 +14,9 @@ class Customer(Model):
     def to_dict(self):
         return {
             'id': self.id,
+            'domain': self.domain,
             'name': self.domain,
-            'join_date': self.join_date,
+            'join_date': self.join_date.isoformat() if self.join_date else None,
             'is_active': self.is_active
         }
 
